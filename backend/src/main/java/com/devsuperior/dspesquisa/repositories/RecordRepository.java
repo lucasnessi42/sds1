@@ -15,7 +15,7 @@ import com.devsuperior.dspesquisa.entities.Record;
 
 	@Query("SELECT obj FROM Record obj WHERE "
 			+ "(coalesce(:min, null) IS NULL OR obj.moment >= :min) AND "
-			+ "(coalesce(:mix, null) IS NULL OR obj.moment <= :max)")
+			+ "(coalesce(:max, null) IS NULL OR obj.moment <= :max)")
 	Page<Record> findByMoments(Instant min, Instant max, Pageable pageable);
 
 
